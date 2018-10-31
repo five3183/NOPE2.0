@@ -1,0 +1,23 @@
+#nav-container {
+   background: url('../images/main-desktop-form2.jpg');
+   background-position: center center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 300px;
+   list-style: none;
+}
+
+.navbar-brand {
+   font-size: 32px;
+}
+
+.nav-link {
+   font-size: 16px;
+}
+form {
+   padding: 20px;
+}
+
+.nav-link {
+   font-size: 24px;
+}
