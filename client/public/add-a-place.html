@@ -13,21 +13,21 @@
    <div class="container-fliud">
       <div id="nav-container">
          <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-            <a class="navbar-brand" href="#">N O P E</a>
+            <a class="navbar-brand" href="/">N O P E</a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
-                     <a class="nav-link" href="#">ADD A PLACE</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#">FIND A PLACE</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#">MAP</a>
-                  </li>
+							<a class="nav-link" href="/add-a-place.html">ADD A PLACE</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/find-a-place.html">FIND A PLACE</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/map.html">MAP</a>
+						</li>
                </ul>
             </div> 
          </nav>
@@ -38,8 +38,7 @@
          <hr>
          <!--  -->
          <form>
-            <fieldset>
-               <fieldset id="restraunt-info">
+               <div id="restraunt-info">
                   <div class="form-group">
                      <label for="resturant-name">Restruant</label>
                      <input class="form-control" id="resturant-name"  type="text" placeholder="Resturant Name">
@@ -58,16 +57,15 @@
                   </div>  
                   <div class="form-group">
                      <label for="resturant-zip">Zip Code</label>
-                     <input class="form-control" id="resturant-zip"  type="text" placeholder="5 digit Zip Code">
+                     <input class="form-control" id="resturant-zip"  type="text" placeholder="Zip Code">
                   </div> 
-               </fieldset>
+               </div>
                <br>
                <h2 class="text-center">Add a Rating</h2>
                <hr>
-               <fieldset id="resturant-rating">
+               <div id="resturant-rating">
                   <br>
-                  <form></form>
-                  <form>
+                  <div class="form-group">
                      <h4>How is the food?</h4>
                      <label class="radio-inline">
                         <input type="radio" name="food" value="1"> 1
@@ -84,9 +82,9 @@
                      <label class="radio-inline">
                         <input type="radio" name="food" value="5"> 5
                      </label>
-                  </form>
+                  </div>
                   <hr>
-                  <form>
+                  <div class="form-group">                     
                      <h4>How are the drinks?</h4>
                      <label class="radio-inline">
                         <input type="radio" name="drinks" value="1"> 1
@@ -103,28 +101,28 @@
                      <label class="radio-inline">
                         <input type="radio" name="drinks" value="5"> 5
                      </label>
-                  </form>
+                  </div>
                   <hr>
-                  <form>
+                  <div class="form-group">
                      <h4>How is the Atmosphere?</h4>
                      <label class="radio-inline">
-                        <input type="radio" name="atmoshpere" value="1"> 1
+                        <input type="radio" name="atmosphere" value="1"> 1
                      </label>
                      <label class="radio-inline">
-                        <input type="radio" name="atmoshpere" value="2"> 2
+                        <input type="radio" name="atmosphere" value="2"> 2
                      </label>
                      <label class="radio-inline">
-                        <input type="radio" name="atmoshpere" value="3"> 3
+                        <input type="radio" name="atmosphere" value="3"> 3
                      </label>
                      <label class="radio-inline">
-                        <input type="radio" name="atmoshpere" value="4"> 4
+                        <input type="radio" name="atmosphere" value="4"> 4
                      </label>
                      <label class="radio-inline">
-                        <input type="radio" name="atmoshpere" value="5"> 5
+                        <input type="radio" name="atmosphere" value="5"> 5
                      </label>
-                  </form>
+                  </div>
                   <hr>
-                  <form>
+                  <div class="form-group">
                      <h4>How is the staff?</h4>
                      <label class="radio-inline">
                         <input type="radio" name="staff" value="1"> 1
@@ -141,9 +139,9 @@
                      <label class="radio-inline">
                         <input type="radio" name="staff" value="5"> 5
                      </label>
-                  </form>
+                  </div>
                   <hr>
-                  <form>
+                  <div class="form-group">
                      <h4>How is the parking?</h4>
                      <label class="radio-inline">
                         <input type="radio" name="parking" value="1"> 1 
@@ -160,18 +158,17 @@
                      <label class="radio-inline">
                         <input type="radio" name="parking"  value="5"> 5 
                      </label>
-                  </form>
+                  </div>
                   <hr>
-               </fieldset>   
-            </fieldset>
+               </div>   
             <br>
             <div class="text-center">
                <button id="send-resturant" class="btn btn-outline-primary" type="button">Send Resturant</button>
             </div>
          </form>
-         <!--  -->
       </div>
       <br><br><br><br><br>
+      <hr>
       <div class="footer text-center">
          © 2018 | All Rights Reserved
       </div>

@@ -7,14 +7,13 @@
    list-style: none;
 }
 
-form {
-   padding: 20px;
-}
 .navbar-brand {
    font-size: 32px;
 }
 
 .nav-link {
    font-size: 16px;
-   color: black;
+}
+form {
+   padding: 20px;
 }

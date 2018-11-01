@@ -1,11 +1,9 @@
 class Keys {
    async getKeys() {
-      const response = await fetch('keys.json')
+      const response = await fetch('./keys.json')
       const key = await response.json()
       return {
          key
       }
    }
 }
-
-document.addEventListener("DOMContentLoaded", Keys.getKeys)

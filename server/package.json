@@ -1,0 +1,29 @@
+{
+  "name": "nope",
+  "version": "2.0.0",
+  "description": "Display the wait time and ratings for restaurants. ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/five3183/NOPE2.0.git"
+  },
+  "author": "MC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/five3183/NOPE2.0/issues"
+  },
+  "homepage": "https://github.com/five3183/NOPE2.0#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
+    "es6-promise": "^4.2.5",
+    "express": "^4.16.4",
+    "isomorphic-fetch": "^2.2.1",
+    "mongoose": "^5.3.8",
+    "path": "^0.12.7"
+  }
+}
