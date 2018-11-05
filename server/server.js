@@ -1,33 +1,40 @@
 require('dotenv').config()
-const path = require("path")
 const express = require('express')
+const path = require("path")
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
-const resturants = require('./routes/api/resturant')
-const user = require('./routes/api/user')
+const app = express()
 
-const app = express();
 const PORT = process.env.PORT || 3000
 
-//SET STATIC FOLDER 
-app.use(express.static(path.join(__dirname, '../client/public')))
-
-//BODYPARSER CHEAT CODES
-app.use(bodyParser.urlencoded({extended: false}))
+//parse application/json
 app.use(bodyParser.json())
 
-// ROUTES
-app.use('/api/resturant', resturants)
-app.use('/api/user', user)
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({extended: true}));
 
 
-mongoose.connect(process.env.MONGODB_URI)
-   .then(console.log('Connected'))
-   .catch(err => {
-      console.log(err)
-   })
+// ROUTES 
+app.use('/', express.static(path.join(__dirname, "../client/public/")))
 
+const routes = require('./routes/routes')
+app.use('./routes', routes)
+
+
+
+// SET SERVER TO LISTEN
 app.listen(PORT, () => {
    console.log(`Server listening on port ${PORT}!`)
+   mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true})
+      .then(console.log('Connected'))
+      .catch(err => {console.log(err)})
+})
+
+const db = mongoose.connection
+
+db.on('error', (err) => console.log(err))
+
+db.once('open', () => {
+   (routes)(app)
 })

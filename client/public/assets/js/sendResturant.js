@@ -5,7 +5,7 @@ const sendResturant = document.getElementById('send-resturant')
 
 // RESTURANT RATING ELEMENTS
 const postResturantData = (resturant => {
-	fetch(`${window.location.pathname}/api/resturant/rate`, {
+	fetch(`/resturant`, {
       method: 'POST',
       headers: {
          'Accept': 'application/json',

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const timestamp = require('mongoose-timestamp')
 const Schema = mongoose.Schema
 
 const ResturantSchema = new Schema({
@@ -30,10 +31,18 @@ const ResturantSchema = new Schema({
       type: String, 
       required: true
    },
+   isBusy: {
+      type: Boolean,
+      default: false
+   },
    ratings:[{
       type: Schema.Types.ObjectId,
       ref: 'Ratings'
    }]
 })
 
-const Resturant = module.exports = mongoose.model('Resturant', ResturantSchema)
+ResturantSchema.plugin(timestamp)
+
+const Resturant = mongoose.model('Resturant', ResturantSchema)
+
+module.exports = Resturant
