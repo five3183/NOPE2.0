@@ -12,6 +12,13 @@ const key = process.env.GOOGLE_APIKEY
 
 module.exports = router => {
 // ***** PAGE ROUTES START *****
+router.get('/add_place', (req, res) => {
+	res.sendFile(path.join(__dirname, "../../client/public/add-a-place.html"))
+})
+router.get('/find_place', (req, res) => {
+	res.sendFile(path.join(__dirname, "../../client/public/find-a-place.html"))
+})
+
 
 // ***** PARGE ROUTES END *****
 
@@ -153,11 +160,14 @@ module.exports = router => {
 	})
 // ****** USER ROUTES END ******
 
-// ****** MAP ROUTES *****
-router.get("/map/:neg/:lat/:neg/:lng", function(req, res) {
-	res.sendFile(path.join(__dirname, "../../client/public/map.html"))
-})
+	// ****** MAP ROUTES *****
+	router.get('/map/:neg/:lat/:neg/:lng', (req, res) => {
+		res.sendFile(path.join(__dirname, "../../client/public/map.html"))
+	})
 
 
 // ****** MAP ROUTES END *****
+
+/// ***** PAGE NOT FOUND *****
+
 }

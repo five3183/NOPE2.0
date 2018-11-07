@@ -1,11 +1,14 @@
 const locationData = window.location.pathname.split('/')
 
+// Pull the coordinates out of the URL
 const latitude = Number(locationData[3])
 const longitude = Number(locationData[5])
 
+//pull the 
 const latitudeIsNegative = locationData[2]
 const longitudeIsNegative = locationData[4]
 
+// check to see if the coordinate should be negated
 const checkNegation =  (negator, coord) => {
    if(negator === 'true') {
       const newNumber = -coord
@@ -67,6 +70,8 @@ const addLocationMarker =  (resturantData) => {
    // Check to see if a resturant is busy to assign the proper marker
    const icon = checkIfBusy(resturantData.resturant.isBusy)
    const resturantID = `'${resturantData.resturant._id}'`
+   // TO DO:  convert time to something pretty
+   const time = resturantData.resturant.updatedAt
 
    // Get the coordiantes to pass for marker loaction
    coordinates = {
@@ -86,10 +91,20 @@ const addLocationMarker =  (resturantData) => {
    const displayInfo = new google.maps.InfoWindow({
       content:`
          <h5>${resturantData.resturant.name}</h5>
-         <div>
-            <button type="button" class="btn btn-outline-success" id="quiet-btn" onclick=changeToQuiet(${resturantID})>Quiet</button>
-            <button type="button" class="btn btn-outline-danger" id="busy-btn" onclick=changeToBusy(${resturantID})>Busy</button>
-         </div>
+			<div class="ratings">
+				Food:
+				Drinks:
+				Atmosphere:
+				Staff:
+				Parking:
+			</div>
+			<br>
+         <div class="text-center">
+            <button type="button" class="btn btn-outline-success btn-sm" id="quiet-btn" onclick=changeToQuiet(${resturantID})>Quiet</button>
+            <button type="button" class="btn btn-outline-danger btn-sm" id="busy-btn" onclick=changeToBusy(${resturantID})>Busy</button>
+			</div>
+			<br>
+         <span>Last Updated: ${time}</span>
       `
   })
   marker.addListener('click', () => {
@@ -105,7 +120,7 @@ function initMap() {
    getResturantsfromDatabase()
       .then(resturants =>  {
          resturants.forEach(resturant => {
-            // console.log(resturant)
+            console.log(resturant)
             const coordinates = {
                lat: resturant.latitude,
                lng: resturant.longitude
