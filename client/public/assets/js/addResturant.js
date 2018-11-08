@@ -2,7 +2,6 @@
 // RESTURANT INFO ELEMENTS
 const sendResturant = document.getElementById('send-resturant')
 
-
 // RESTURANT RATING ELEMENTS
 const postResturantData = (resturant => {
 	fetch(`/resturant`, {
@@ -14,9 +13,12 @@ const postResturantData = (resturant => {
       body: JSON.stringify(resturant)
    })
    .then(response => response.json())
+   .then(id => {
+      window.location.assign(`/rate_resturant/${id}`)
+
+   })
    .then(err => console.log(err))
 })
-
 
 sendResturant.addEventListener('click', () => {
    // GET RESTURANT INFO from form
@@ -26,13 +28,6 @@ sendResturant.addEventListener('click', () => {
    const state = document.getElementById('resturant-state').value.trim()
    const zip = document.getElementById('resturant-zip').value.trim()
 
-   // GET RESTURANT RATING from form
-   const food = document.querySelector('input[name=food]:checked').value
-   const drinks =  document.querySelector('input[name=drinks]:checked').value
-   const atmosphere = document.querySelector('input[name=atmosphere]:checked').value
-   const staff = document.querySelector('input[name=staff]:checked').value
-   const parking = document.querySelector('input[name=parking]:checked').value
-
    // CREATE resturant object
    const resturant = {
       name,
@@ -40,11 +35,6 @@ sendResturant.addEventListener('click', () => {
       city,
       state,
       zip,
-      food,
-      drinks,
-      atmosphere,
-      staff,
-      parking
    }
    console.log(resturant)
    postResturantData(resturant)

@@ -1,7 +1,11 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const RatingSchema = new Schema({
+const RatingsSchema = new Schema({
+   resturant: {
+      type: Schema.Types.ObjectId,
+      ref: 'Resturant'
+   },
    food: {
       type: String,
       required: true
@@ -21,7 +25,13 @@ const RatingSchema = new Schema({
    parking: {
       type: String,
       required: true
+   },
+   date: {
+      type: Date,
+      default: Date.now
    }
 })
 
-const Ratings = module.exports = mongoose.model('Rating', RatingSchema)
+const Ratings = mongoose.model('Ratings', RatingsSchema)
+
+module.exports = Ratings

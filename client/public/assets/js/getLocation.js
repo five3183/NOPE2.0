@@ -1,7 +1,7 @@
 // UI ELEMENTS
 const sendUser = document.getElementById('send-location')
 
-const checkIfNegative =  (number) => {
+const checkIfNegative = (number) => {
 	if(number < 0) {
 		const isNegative = true
 		return isNegative
@@ -22,6 +22,7 @@ const postUserLocationData = (user => {
    })
       .then(response => response.json())
       .then(locationData => {
+			
 			let latitude = locationData.geometry.location.lat
 			let longitude = locationData.geometry.location.lng
 			const latitudeIsNegative = checkIfNegative(latitude)
