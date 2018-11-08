@@ -16,10 +16,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 // ROUTES 
-app.use('/', express.static(path.join(__dirname, "../client/public/")))
+app.use('/', express.static(path.join(__dirname, "./client/public/")))
 
-const routes = require('./routes/routes')
-app.use('./routes', routes)
+const routes = require('./server/routes/routes')
+app.use('/routes', routes)
 
 
 
